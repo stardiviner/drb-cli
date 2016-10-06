@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+require 'drb'
+DRb.start_service
+counterObj= DRbObject.new_with_uri  'druby://localhost:9000'
+file_str = open(ARGV[0]){ |f| f.read }
+ARGV.shift
+@drb_args = ARGV
+
+begin 
+  $stdout.print counterObj.eval("@drb_args = #{@drb_args};" + file_str) # 客户端文件内不要用puts,不然命令结果返回不了当前,而是返回服务端
+rescue => e
+  #$stdout.print e.backtrace
+  $stdout.print e
+end
+
+if counterObj.eval("$st_outputs.empty?")
+else
+  $stdout.print counterObj.eval("'\n' + $st_outputs.join('\n')")
+end
+counterObj.eval("clear_st_outputs")

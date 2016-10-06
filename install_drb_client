@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo cp ./bin/drb /usr/bin/
+echo "Install drb client ok."
