@@ -2,6 +2,7 @@ require "drbcli/version"
 require 'ruby_parser'
 require 'method_source'
 require 'drb'
+require 'thor'
 
 $st_outputs = []
 class Object

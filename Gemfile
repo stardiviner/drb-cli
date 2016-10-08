@@ -5,6 +5,7 @@ gemspec
 
 gem 'ruby_parser'
 gem 'method_source'
+gem 'thor'
 group :development, :test do
   gem 'pry'
   gem 'rspec'
