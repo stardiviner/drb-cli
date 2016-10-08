@@ -9,20 +9,25 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'drbcli'
+gem 'drbcli', git: "https://github.com/ruby-emacs/drb-cli.git"
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install drbcli
-
 ## Usage
 
-TODO: Write usage instructions here
+start a drb debug server in your code's anywhere:
+
+```ruby
+drb_start binding
+```
+then run drb client command: 
+
+```ruby
+/your-gem-path/drb-cli/bin/drb file.rb 
+```
 
 ## Development
 
