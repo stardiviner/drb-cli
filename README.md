@@ -22,6 +22,7 @@ start a drb debug server in your code's anywhere:
 
 ```ruby
 drb_start binding
+# Server running at druby://localhost:9000
 ```
 then run drb client command: 
 
